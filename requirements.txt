@@ -1,2 +1,2 @@
 streamlit==1.45.1
-tinyllama
+ollama==0.4.7
