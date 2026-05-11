@@ -1,19 +1,18 @@
 # 🤖 ChatGPT-based Python Application
 
 ## 📌 Overview
-This project is a Python-based AI chatbot application inspired by ChatGPT concepts.  
-It uses Streamlit for the frontend interface and Ollama for running LLM models locally.
+This project is a Python-based AI chatbot application inspired by ChatGPT concepts using Streamlit and Ollama.
 
 ---
 
 ## 🚀 Features
 
 - Interactive AI chatbot
-- Conversational memory
-- Clean UI using Streamlit
-- Local LLM integration using Ollama
+- Local LLM integration
+- Conversation memory
+- Streamlit UI
 - Error handling
-- Beginner-friendly project structure
+- Beginner-friendly project
 
 ---
 
@@ -22,13 +21,14 @@ It uses Streamlit for the frontend interface and Ollama for running LLM models l
 - Python
 - Streamlit
 - Ollama
+- TinyLlama
 - LLM Concepts
 
 ---
 
 ## 📂 Project Structure
 
-chatgpt-python-app/
+ChatGPT-based-Python-Application/
 │
 ├── app.py
 ├── requirements.txt
@@ -41,13 +41,33 @@ chatgpt-python-app/
 
 ### 1️⃣ Install Ollama
 
-Download:
-
+Download from:
 https://ollama.com
 
 ---
 
-### 2️⃣ Pull Model
+### 2️⃣ Pull TinyLlama Model
+
+```bash
+ollama pull tinyllama
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```bash
 ollama pull llama3.2
