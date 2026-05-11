@@ -3,7 +3,7 @@ import ollama
 
 # ---------------- PAGE CONFIG ---------------- #
 st.set_page_config(
-    page_title="ChatGPT Python App",
+    page_title="TinyLlama Chatbot",
     page_icon="🤖",
     layout="centered"
 )
@@ -12,20 +12,21 @@ st.set_page_config(
 st.title("🤖 ChatGPT-based Python Application")
 st.markdown("Built using Python + Streamlit + Ollama")
 
-# ---------------- SESSION MEMORY ---------------- #
+# ---------------- SESSION STATE ---------------- #
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
 # ---------------- USER INPUT ---------------- #
 user_input = st.text_input("Ask your question")
 
-# ---------------- BUTTON ---------------- #
+# ---------------- GENERATE BUTTON ---------------- #
 if st.button("Generate Response"):
 
     if user_input.strip() == "":
-        st.warning("⚠️ Please enter a question")
+        st.warning("⚠️ Please enter a valid question")
 
     else:
+
         try:
 
             # Save user message
@@ -36,7 +37,7 @@ if st.button("Generate Response"):
 
             # Generate AI response
             response = ollama.chat(
-                model="llama3.2",
+                model="tinyllama",
                 messages=st.session_state.messages
             )
 
@@ -48,17 +49,17 @@ if st.button("Generate Response"):
                 "content": ai_reply
             })
 
-            # Show response
+            # Display AI response
             st.success(ai_reply)
 
         except Exception as e:
 
-            st.error(f"Error: {e}")
+            st.error(f"❌ Error: {e}")
 
             st.info("""
 ✅ Make sure:
 1. Ollama is installed
-2. Run: ollama pull llama3.2
+2. Run: ollama pull tinyllama
 3. Ollama server is running
             """)
 
@@ -72,6 +73,7 @@ for msg in st.session_state.messages:
 
     else:
         st.markdown(f"🤖 **AI:** {msg['content']}")
+
 
 
 
