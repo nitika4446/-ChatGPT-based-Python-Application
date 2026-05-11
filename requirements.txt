@@ -1,2 +1,2 @@
-streamlit
-ollama run tinyllama
+streamlit==1.45.1
+ollama==0.4.7
