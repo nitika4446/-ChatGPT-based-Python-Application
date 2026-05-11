@@ -1,2 +1,2 @@
 streamlit
-ollama3.2
+ollama 3.2
